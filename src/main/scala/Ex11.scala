@@ -7,18 +7,17 @@ object Ex11 extends App {
     secondDim <- 0 to 2
   } {
     array2d(firstDim)(secondDim) = 1
-    print(array2d(firstDim)(secondDim) + " ")
+    println(s"Arr2D($firstDim)($secondDim): ${array2d(firstDim)(secondDim)}")
   }
-
-  print("\n")
 
   for {
     firstDim  <- 0 to 1
-    secondDim <- 0 to 2 if secondDim != 1
+    secondDim <- 0 to 2
     thirdDim  <- 0 to 1
   } {
-    array3d(firstDim)(secondDim)(thirdDim) = 3
-    print(array3d(firstDim)(secondDim)(thirdDim) + " ")
+    if (secondDim != 1) array3d(firstDim)(secondDim)(thirdDim) = 3
+    else array3d(firstDim)(secondDim)(thirdDim) = 2
+    println(s"Arr3D($firstDim)($secondDim)($thirdDim): ${array3d(firstDim)(secondDim)(thirdDim)}")
   }
 }
 
@@ -29,4 +28,4 @@ object Ex11 extends App {
 
  Затем печатаем \n для переода на новую строку в консоли
  и делаем анлаогичные дейтсвия для array3d, однако в этот раз для всех чисел со второй координатой не равной 1
-*/
+ */
